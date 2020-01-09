@@ -1,6 +1,8 @@
 <html>
     <head>
         <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+            <script src="assets/js/moment.js"></script>
+            <script src="assets/js/jquery-3.4.1.min.js"></script>
     </head>
     <body>
         <div id="background">
@@ -18,7 +20,23 @@
             d = n.getDate();
             document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
             </script>
-            
+
+            <div id="datetime"></div>
+            <script>
+            var datetime = null,
+                    date = null;
+
+            var update = function () {
+            date = moment(new Date())
+            datetime.html(date.format('LTS'));
+            };
+
+            $(document).ready(function(){
+                datetime = $('#datetime')
+                update();
+                setInterval(update, 1000);
+            });   
+            </script>
         <audio id="audioplayer" controls autoplay hidden></audio>
         <script>
             var lastSong = null;
