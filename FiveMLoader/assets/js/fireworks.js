@@ -1,6 +1,6 @@
 setTimeout(function() {
   var myDate = new Date();
-  $date = "Jan 01 2020";
+  $date = "Jan 01";
   var reg = new RegExp("(" + $date.replace(/\s/g, "\\s") + ")", "g");
   console.log(myDate);
   if (myDate.toString().match($date)) {

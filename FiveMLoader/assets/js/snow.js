@@ -5,7 +5,7 @@ setTimeout(function() {
   console.log(myDate);
   if (myDate.toString().match($date)) {
     var snowStorm = (function(window, document) {
-      // --- common properties ---
+      // --- Common Parameters
 
       this.autoStart = true; // Whether the snow should start automatically or not.
       this.excludeMobile = true; // Snow is likely to be bad news for mobile phones' CPUs (and batteries.) Enable at your own risk.
@@ -22,11 +22,11 @@ setTimeout(function() {
       this.snowStick = true; // Whether or not snow should "stick" at the bottom. When off, will never collect.
       this.targetElement = null; // element which snow will be appended to (null = document.body) - can be an element ID eg. 'myDiv', or a DOM node reference
       this.useMeltEffect = true; // When recycling fallen snow (or rarely, when falling), have it "melt" and fade out if browser supports it
-      this.useTwinkleEffect = false; // Allow snow to randomly "flicker" in and out of view while falling
+      this.useTwinkleEffect = true; // Allow snow to randomly "flicker" in and out of view while falling
       this.usePositionFixed = false; // true = snow does not shift vertically when scrolling. May increase CPU load, disabled by default - if enabled, used only where supported
       this.usePixelPosition = false; // Whether to use pixel values for snow top/left vs. percentages. Auto-enabled if body is position:relative or targetElement is specified.
 
-      // --- less-used bits ---
+      // --- Less used parameters
 
       this.freezeOnBlur = true; // Only snow when the window is in focus (foreground.) Saves CPU.
       this.flakeLeftOffset = 0; // Left margin/gutter space on edge of container (eg. browser window.) Bump up these values if seeing horizontal scrollbars.
@@ -37,7 +37,7 @@ setTimeout(function() {
       this.vMaxY = 4; // Maximum Y velocity range for snow
       this.zIndex = 0; // CSS stacking order applied to each snowflake
 
-      // --- "No user-serviceable parts inside" past this point, yadda yadda ---
+      // --- Nothing is to be worked on past this point.
 
       var storm = this,
         features,
@@ -72,12 +72,6 @@ setTimeout(function() {
 
       features = (function() {
         var getAnimationFrame;
-
-        /**
-         * hat tip: paul irish
-         * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-         * https://gist.github.com/838785
-         */
 
         function timeoutShim(callback) {
           window.setTimeout(callback, 1000 / (storm.animationInterval || 20));
