@@ -22,14 +22,10 @@ h1 {
 }
 h2 {
   font-family: "Arual", sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   position: absolute;
-  top: -18px;
-  left: 1254px;
-  font-weight: lighter;
-}
-div {
-  font-family: "Arual", sans-serif;
+  top: -37px;
+  left: 1060px;
   font-weight: lighter;
 }
 #background {
@@ -42,24 +38,25 @@ div {
   position: fixed;
   left: 0;
   right: 0;
-  z-index: 1;
   transform: scale(1.03);
-  transition: all 20s linear;
+  transition: all 40s linear;
   background-position: 0px 0px;
 
   display: block;
 }
 .log {
-  color: rgba(255, 255, 255, 0.46);
+  color: rgba(0, 0, 0, 0.3);
   position: absolute;
   left: 20px;
   top: 20px;
+  z-index: 1;
+  font-family: Arial;
 }
 .log-top-right {
   top: 20px;
   right: 20px;
   text-align: right;
-  display: none;
+  font-family: Arial;
 }
 .loading-container {
   position: absolute;
@@ -124,7 +121,16 @@ div {
 .loading-bar {
   height: 20px;
   border-radius: 3px;
-  background: repeating-linear-gradient(to right, red 0%, orange 50%, #FF4C85 100%, orange 50%, red 0%);
+  background: repeating-linear-gradient(
+    to right,
+    red 0%,
+    orange 50%,
+    #ff4c85 75%,
+    #ff4c85 100%,
+    #ff4c85 75%,
+    orange 50%,
+    red 0%
+  );
   width: 100%;
   background-size: 200% auto;
   background-position: 0 100%;
@@ -132,9 +138,13 @@ div {
   animation-fill-mode: backwards;
   animation-timing-function: linear;
 }
-@keyframes gradient { 
-  0%   { background-position: 0 0; }
-  100% { background-position: -200% 0; }
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 .bgcolor-first {
   background-color: #d95b43;

@@ -12,25 +12,14 @@
             <div id="debug" class="log log-top-right"></div>
             <div class="loading-container">
             <h1>Celestial Roleplay Beta</h1>
-            <h2 id="date"></h2>
-            <script>
-            n =  new Date();
-            y = n.getFullYear();
-            m = n.getMonth() + 1;
-            d = n.getDate();
-            document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
-            </script>
-
-            <div id="datetime"></div>
+            <h2 id="datetime"></h2>
             <script>
             var datetime = null,
                     date = null;
-
             var update = function () {
             date = moment(new Date())
-            datetime.html(date.format('LTS'));
+            datetime.html(date.format('MMMM Do YYYY, h:mm:ss a'));
             };
-
             $(document).ready(function(){
                 datetime = $('#datetime')
                 update();
@@ -387,7 +376,6 @@ var newTypeWithOrder = function newTypeWithOrder(name, count) {
 <div class="content-container">
             <span>
                 <p class="loading-text stick-to-right"></p>
-    </body>
     <script src="assets/js/fireworks.js"></script>
     <script src="assets/js/snow.js"></script>
     </body>
